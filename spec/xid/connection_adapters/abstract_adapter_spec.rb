@@ -3,11 +3,11 @@ require 'spec_helper'
 require "xid/connection_adapters/abstract_adapter"
 
 describe 'XID::ConnectionAdapters::AbstractAdapter' do
-  let(:adapter) { ActiveRecord::ConnectionAdapters::AbstractAdapter.new(stub.as_null_object) }
+  let(:adapter) { ActiveRecord::ConnectionAdapters::AbstractAdapter.new(stub('adapter').as_null_object) }
 
   describe "#supports_transaction_id?" do
     it "should respond false to supports_transaction_id?" do
-      adapter.supports_transaction_id?.should be_false
+      adapter.supports_transaction_id?.should be false
     end
   end
 

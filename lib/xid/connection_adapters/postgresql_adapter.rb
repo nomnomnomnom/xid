@@ -15,7 +15,7 @@ module XID
       #   life of an installation.
       #
       def select_transaction_id
-        select_value('SELECT txid_current()')
+        select_value('SELECT txid_current()').to_s
       end
 
     end

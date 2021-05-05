@@ -1,9 +1,9 @@
 shared_examples "transaction ID supported behaviour" do
   let(:adapter) { ActiveRecord::Base.connection }
-  
+
   describe "#supports_transaction_id?" do
     it "should respond false to supports_transaction_id?" do
-      adapter.supports_transaction_id?.should be_true
+      adapter.supports_transaction_id?.should be true
     end
   end
 
