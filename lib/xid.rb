@@ -8,7 +8,7 @@ module XID
   self.synthetic_id = false
 
   def self.load
-    @adapter ||= ActiveRecord::Base.connection_pool.spec.config[:adapter]
+    @adapter ||= ActiveRecord::Base.connection_db_config.configuration_hash[:adapter]
     require "xid/connection_adapters/#{@adapter}_adapter"
   rescue LoadError
     puts "XID was unable to load the transaction ID extension for the '#{@adapter}' adapter"
